@@ -28,11 +28,6 @@ jobs:
       - name: Build
         run: npx vite build
 
-      - name: Configure Git
-        run: |
-          git config --global user.email "steve@blue64.net"
-          git config --global user.name "Steven E. Levine"
-
       - name: Deploy to GH Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
