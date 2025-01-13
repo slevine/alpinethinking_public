@@ -41,7 +41,7 @@ const AlpineThinking = () => {
                         <div className="flex justify-between h-16">
                             <div className="flex items-center">
                                 <img
-                                        src="images/logo2.png"
+                                        src="logo2.png"
                                         alt="Alpine Thinking Logo"
                                         className="h-12 w-auto"
                                         onClick={() => scrollToSection('home')}
