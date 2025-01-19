@@ -33,56 +33,23 @@ const AlpineThinking = () => {
     }, []);
 
     return (
-            <div className="min-h-screen bg-gray-50">
-                {/* Navigation */}
-                <nav className="fixed top-0 w-full shadow-md z-50"
-                     style={{backgroundColor: 'rgb(245, 245, 244)'}}>
-                    <div className="max-w-7xl mx-auto px-4">
-                        <div className="flex justify-between h-16">
-                            <div className="flex items-center">
-                                <img
-                                        src="logo2.png"
-                                        alt="Alpine Thinking Logo"
-                                        className="h-12 w-auto"
-                                        onClick={() => scrollToSection('home')}
-                                        style={{cursor: 'pointer'}}
-                                />
-                            </div>
+            <div className="w-full min-h-screen bg-gray-50">
+                {/* Navigation - Full Width */}
+                <nav className="fixed top-0 w-full shadow-md z-50 bg-[rgb(245, 245, 244)]">
+                    <div className="w-full px-4">
+                        <div className="max-w-7xl mx-auto">
+                            <div className="flex justify-between h-16">
+                                <div className="flex items-center">
+                                    <img
+                                            src="logo2.png"
+                                            alt="Alpine Thinking Logo"
+                                            className="h-12 w-auto cursor-pointer"
+                                            onClick={() => scrollToSection('home')}
+                                    />
+                                </div>
 
-                            {/* Desktop Navigation */}
-                            <div className="hidden md:flex items-center space-x-4">
-                                {['home', 'about', 'services', 'contact'].map((item) => (
-                                        <button
-                                                key={item}
-                                                onClick={() => scrollToSection(item)}
-                                                className={`${
-                                                        activeSection === item
-                                                                ? 'bg-blue-900 text-white'
-                                                                : 'bg-gray-500 text-white hover:bg-gray-600'
-                                                } px-4 py-2 rounded-md text-sm font-medium capitalize transition-colors duration-200`}
-                                        >
-                                            {item}
-                                        </button>
-                                ))}
-                            </div>
-
-                            {/* Mobile Navigation Button */}
-                            <div className="md:hidden flex items-center">
-                                <button
-                                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                        className="bg-gray-500 text-white hover:bg-gray-600 px-3 py-2 rounded-md"
-                                >
-                                    {isMenuOpen ? <X size={24}/> : <Menu size={24}/>}
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Mobile Navigation Menu */}
-                    {isMenuOpen && (
-                            <div className="md:hidden"
-                                 style={{backgroundColor: 'rgb(245, 245, 244)'}}>
-                                <div className="px-2 pt-2 pb-3 space-y-1">
+                                {/* Desktop Navigation */}
+                                <div className="hidden md:flex items-center space-x-4">
                                     {['home', 'about', 'services', 'contact'].map((item) => (
                                             <button
                                                     key={item}
@@ -90,12 +57,47 @@ const AlpineThinking = () => {
                                                     className={`${
                                                             activeSection === item
                                                                     ? 'bg-blue-900 text-white'
-                                                                    : 'bg-gray-700 text-white hover:bg-gray-600'
-                                                    } block w-full text-left px-4 py-2 rounded-md text-sm font-medium capitalize transition-colors duration-200`}
+                                                                    : 'bg-gray-500 text-white hover:bg-gray-600'
+                                                    } px-4 py-2 rounded-md text-sm font-medium capitalize transition-colors duration-200`}
                                             >
                                                 {item}
                                             </button>
                                     ))}
+                                </div>
+
+                                {/* Mobile Navigation Button */}
+                                <div className="md:hidden flex items-center">
+                                    <button
+                                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                                            className="bg-gray-500 text-white hover:bg-gray-600 px-3 py-2 rounded-md"
+                                    >
+                                        {isMenuOpen ? <X size={24}/> :
+                                                <Menu size={24}/>}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Mobile Navigation Menu */}
+                    {isMenuOpen && (
+                            <div className="w-full md:hidden bg-[rgb(245, 245, 244)]">
+                                <div className="max-w-7xl mx-auto px-4">
+                                    <div className="py-3 space-y-1">
+                                        {['home', 'about', 'services', 'contact'].map((item) => (
+                                                <button
+                                                        key={item}
+                                                        onClick={() => scrollToSection(item)}
+                                                        className={`${
+                                                                activeSection === item
+                                                                        ? 'bg-blue-900 text-white'
+                                                                        : 'bg-gray-700 text-white hover:bg-gray-600'
+                                                        } w-full text-left px-4 py-2 rounded-md text-sm font-medium capitalize transition-colors duration-200`}
+                                                >
+                                                    {item}
+                                                </button>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                     )}
@@ -104,7 +106,7 @@ const AlpineThinking = () => {
 
                 {/* Hero Section */}
                 <section id="home"
-                         className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800">
+                         className="w-screen min-w-full pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800">
                     <div className="max-w-7xl mx-auto px-4">
                         <div className="text-center">
                             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -112,11 +114,13 @@ const AlpineThinking = () => {
                             </h1>
                             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
                                 A premier boutique consulting firm specializing in
-                                enterprise data platforms, cutting-edge AI solutions,
-                                and seamless cloud transformation. We bridge the gap
+                                enterprise data platforms,
+                                cutting-edge AI solutions, and seamless cloud
+                                transformation. We bridge the gap
                                 between complex technology and real business value,
-                                turning data challenges into competitive advantages
-                                through practical, results-driven solutions.
+                                turning data challenges
+                                into competitive advantages through practical,
+                                results-driven solutions.
                             </p>
                             <button
                                     onClick={() => scrollToSection('contact')}
@@ -128,11 +132,12 @@ const AlpineThinking = () => {
                     </div>
                 </section>
 
-                {/* About Section */}
-                <section id="about" className="py-16 bg-white">
+                {/* About Section - Full Width */}
+                <section id="about" className="w-full py-16 bg-white">
                     <div className="max-w-7xl mx-auto px-4">
-                        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Why
-                            Choose AlpineThinking</h2>
+                        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+                            Why Choose AlpineThinking
+                        </h2>
                         <div className="grid md:grid-cols-3 gap-8">
                             <div className="p-6 bg-gray-50 rounded-lg">
                                 <Users className="w-12 h-12 text-blue-600 mb-4"/>
@@ -140,14 +145,11 @@ const AlpineThinking = () => {
                                     Touch</h3>
                                 <p className="text-gray-600">
                                     As a boutique firm, we provide dedicated attention
-                                    and tailored solutions for every client. Our senior
-                                    consultants work directly with your team, ensuring
-                                    clear communication and rapid problem-solving. We
-                                    pride ourselves on being accessible and responsive,
-                                    maintaining a high-touch service model that larger
-                                    firms simply cannot match. Every project receives
-                                    direct attention from our most experienced
-                                    consultants, ensuring the highest quality outcomes.
+                                    and tailored solutions
+                                    for every client. Our senior consultants work
+                                    directly with your team,
+                                    ensuring clear communication and rapid
+                                    problem-solving.
                                 </p>
                             </div>
                             <div className="p-6 bg-gray-50 rounded-lg">
@@ -156,16 +158,11 @@ const AlpineThinking = () => {
                                     Expertise</h3>
                                 <p className="text-gray-600">
                                     Our team brings decades of experience from leading
-                                    tech companies and successful enterprise
-                                    transformations. With certifications across major
+                                    tech companies and
+                                    successful enterprise transformations. With
+                                    certifications across major
                                     cloud platforms and deep expertise in modern data
-                                    architecture, we've helped organizations from
-                                    startups to Fortune 500 companies achieve their
-                                    technology goals. Our consultants average 15+ years
-                                    of hands-on experience in data engineering, cloud
-                                    architecture, and enterprise systems. We bring best
-                                    practices from hundreds of successful
-                                    implementations to every project.
+                                    architecture.
                                 </p>
                             </div>
                             <div className="p-6 bg-gray-50 rounded-lg">
@@ -174,22 +171,19 @@ const AlpineThinking = () => {
                                     Driven</h3>
                                 <p className="text-gray-600">
                                     We measure our success by your outcomes, focusing on
-                                    delivering tangible business value through practical
-                                    solutions. Our projects have delivered an average of
-                                    40% reduction in data processing costs and 60%
-                                    improvement in analytics delivery time. We back our
-                                    work with clear metrics and guaranteed satisfaction.
-                                    Our approach combines technical excellence with
-                                    business acumen, ensuring solutions that not only
-                                    work technically but drive real business results.
+                                    delivering tangible
+                                    business value through practical solutions. Our
+                                    projects have delivered
+                                    an average of 40% reduction in data processing
+                                    costs.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* Services Section */}
-                <section id="services" className="py-16 bg-gray-50">
+                {/* Services Section - Full Width */}
+                <section id="services" className="w-full py-16 bg-gray-50">
                     <div className="max-w-7xl mx-auto px-4">
                         <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Our
                             Services</h2>
@@ -200,15 +194,9 @@ const AlpineThinking = () => {
                                     Data Platforms</h3>
                                 <p className="text-gray-600">
                                     Expert implementation of modern data platforms using
-                                    GCP, AWS, and Azure. We specialize in data lakes,
-                                    warehouse modernization, and real-time analytics.
-                                    Our solutions incorporate best practices in data
-                                    governance, security, and scalability. From initial
-                                    architecture to production deployment, we ensure
-                                    your data platform meets both current needs and
-                                    future growth requirements. Experience with
-                                    platforms like Snowflake, Databricks, and BigQuery
-                                    ensures the right solution for your specific needs.
+                                    GCP, AWS, and Azure.
+                                    We specialize in data lakes, warehouse
+                                    modernization, and real-time analytics.
                                 </p>
                             </div>
                             <div className="bg-white p-6 rounded-lg shadow-sm">
@@ -217,15 +205,9 @@ const AlpineThinking = () => {
                                     Solutions</h3>
                                 <p className="text-gray-600">
                                     End-to-end machine learning solutions from strategy
-                                    to production, helping you identify and implement
-                                    high-value AI opportunities. Our expertise spans
-                                    predictive analytics, natural language processing,
-                                    computer vision, and recommendation systems. We
-                                    focus on practical AI applications that deliver
-                                    measurable business value, including MLOps practices
-                                    for sustainable AI deployment. Our team helps you
-                                    navigate the complexities of AI implementation while
-                                    ensuring responsible and ethical AI practices.
+                                    to production, helping
+                                    you identify and implement high-value AI
+                                    opportunities.
                                 </p>
                             </div>
                             <div className="bg-white p-6 rounded-lg shadow-sm">
@@ -234,24 +216,16 @@ const AlpineThinking = () => {
                                     Engineering</h3>
                                 <p className="text-gray-600">
                                     Building robust, scalable data pipelines and
-                                    analytics solutions using modern tools like Spark,
-                                    Kafka, and dbt. We implement efficient ETL/ELT
-                                    processes, real-time streaming solutions, and
-                                    automated data quality frameworks. Our engineering
-                                    practices emphasize reliability, maintainability,
-                                    and performance optimization. We help you modernize
-                                    legacy systems while ensuring business continuity
-                                    and knowledge transfer to your team. Expertise in
-                                    both batch and streaming architectures ensures
-                                    solutions that match your data velocity needs.
+                                    analytics solutions using
+                                    modern tools like Spark, Kafka, and dbt.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* Contact Section */}
-                <section id="contact" className="py-16 bg-gray-800">
+                {/* Contact Section - Full Width */}
+                <section id="contact" className="w-full py-16 bg-gray-800">
                     <div className="max-w-7xl mx-auto px-4">
                         <h2 className="text-3xl font-bold text-center mb-12 text-white">Start
                             Your Journey</h2>
@@ -272,11 +246,11 @@ const AlpineThinking = () => {
                                     />
                                 </div>
                                 <div>
-                <textarea
-                        placeholder="Tell us about your project"
-                        rows={4}
-                        className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-700 text-white placeholder-gray-400"
-                />
+                                <textarea
+                                        placeholder="Tell us about your project"
+                                        rows={4}
+                                        className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-700 text-white placeholder-gray-400"
+                                />
                                 </div>
                                 <button
                                         type="submit"
@@ -289,8 +263,8 @@ const AlpineThinking = () => {
                     </div>
                 </section>
 
-                {/* Footer */}
-                <footer className="bg-gray-900 text-white py-8">
+                {/* Footer - Full Width */}
+                <footer className="w-full bg-gray-900 text-white py-8">
                     <div className="max-w-7xl mx-auto px-4 text-center">
                         <p>&copy; 2025 AlpineThinking. All rights reserved.</p>
                     </div>
