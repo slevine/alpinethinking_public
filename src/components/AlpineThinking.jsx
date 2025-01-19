@@ -35,7 +35,7 @@ const AlpineThinking = () => {
     return (
             <div className="w-full min-h-screen bg-gray-50">
                 {/* Navigation - Full Width */}
-                <nav className="fixed top-0 w-full shadow-md z-50 bg-[rgb(245, 245, 244)]">
+                <nav className="fixed top-0 left-0 right-0 w-screen shadow-md z-50 bg-gray-100">
                     <div className="w-full px-4">
                         <div className="max-w-7xl mx-auto">
                             <div className="flex justify-between h-16">
@@ -105,8 +105,10 @@ const AlpineThinking = () => {
 
 
                 {/* Hero Section */}
-                <section id="home"
-                         className="w-screen min-w-full pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800">
+                <section
+                        id="home"
+                        className="w-screen relative mt-16 pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800"
+                >
                     <div className="max-w-7xl mx-auto px-4">
                         <div className="text-center">
                             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -144,7 +146,8 @@ const AlpineThinking = () => {
                                 <h3 className="text-xl font-semibold mb-3 text-gray-900">Personal
                                     Touch</h3>
                                 <p className="text-gray-600">
-                                    As a boutique firm, we provide dedicated attention
+                                    As a boutique firm, we provide dedicated
+                                    attention
                                     and tailored solutions
                                     for every client. Our senior consultants work
                                     directly with your team,
@@ -157,20 +160,24 @@ const AlpineThinking = () => {
                                 <h3 className="text-xl font-semibold mb-3 text-gray-900">Proven
                                     Expertise</h3>
                                 <p className="text-gray-600">
-                                    Our team brings decades of experience from leading
+                                    Our team brings decades of experience from
+                                    leading
                                     tech companies and
                                     successful enterprise transformations. With
                                     certifications across major
-                                    cloud platforms and deep expertise in modern data
+                                    cloud platforms and deep expertise in modern
+                                    data
                                     architecture.
                                 </p>
                             </div>
                             <div className="p-6 bg-gray-50 rounded-lg">
-                                <BarChart3 className="w-12 h-12 text-blue-600 mb-4"/>
+                                <BarChart3
+                                        className="w-12 h-12 text-blue-600 mb-4"/>
                                 <h3 className="text-xl font-semibold mb-3 text-gray-900">Results
                                     Driven</h3>
                                 <p className="text-gray-600">
-                                    We measure our success by your outcomes, focusing on
+                                    We measure our success by your outcomes,
+                                    focusing on
                                     delivering tangible
                                     business value through practical solutions. Our
                                     projects have delivered
@@ -193,7 +200,8 @@ const AlpineThinking = () => {
                                 <h3 className="text-xl font-semibold mb-3 text-gray-900">Cloud
                                     Data Platforms</h3>
                                 <p className="text-gray-600">
-                                    Expert implementation of modern data platforms using
+                                    Expert implementation of modern data platforms
+                                    using
                                     GCP, AWS, and Azure.
                                     We specialize in data lakes, warehouse
                                     modernization, and real-time analytics.
@@ -204,7 +212,8 @@ const AlpineThinking = () => {
                                 <h3 className="text-xl font-semibold mb-3 text-gray-900">AI
                                     Solutions</h3>
                                 <p className="text-gray-600">
-                                    End-to-end machine learning solutions from strategy
+                                    End-to-end machine learning solutions from
+                                    strategy
                                     to production, helping
                                     you identify and implement high-value AI
                                     opportunities.
